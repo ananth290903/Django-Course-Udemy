@@ -25,15 +25,12 @@ monthly_challenges = {
 
 
 def monthly_challenge(request, month):
-	challenge_text = None
-	if month == "january":
-		challenge_text = "Embrce new beginnings"
-	elif month == "march":
-		challenge_text = "Reduce the Consumption of Red Meat"
-	elif month == "february":
-		challenge_text = "Walk for atleast 20 minutes a day!"
-	else:
-		challenge_text = "Invalid Month!"
+	try:
+		challenge_text=monthly_challenges[month]
+		month=month.lower()
+	except:
+		challenge_text="Month is Invalid !!!"
+	
 	return HttpResponse(challenge_text)
 
 
@@ -45,6 +42,47 @@ def monthly_challenge_by_month(request,month):
 		redirected_month=months[month-1]
 		redirected_url=reverse("monthly_challenge",args=[redirected_month])
 		return HttpResponseRedirect(redirected_url)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+# def monthly_challenge(request, month):
+# 	challenge_text = None
+# 	if month == "january":
+# 		challenge_text = "Embrce new beginnings"
+# 	elif month == "march":
+# 		challenge_text = "Reduce the Consumption of Red Meat"
+# 	elif month == "february":
+# 		challenge_text = "Walk for atleast 20 minutes a day!"
+# 	else:
+# 		challenge_text = "Invalid Month!"
+# 	return HttpResponse(challenge_text)
 
 
 
