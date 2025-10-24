@@ -26,10 +26,10 @@ monthly_challenges = {
 
 def monthly_challenge(request, month):
 	try:
-		challenge_text=monthly_challenges[month]
 		month=month.lower()
+		challenge_text=f"<h1>{monthly_challenges[month]}</h1>"
 	except:
-		challenge_text="Month is Invalid !!!"
+		challenge_text=f"<h1>Month is Invalid !!!</h1>"
 	
 	return HttpResponse(challenge_text)
 
@@ -69,7 +69,7 @@ def monthly_challenge_by_month(request,month):
 
 
 
-	
+
 	
 
 # def monthly_challenge(request, month):
