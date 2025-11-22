@@ -1,0 +1,16 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Migrations",
+            "type": "shell",
+            "command": "python manage.py migrate"
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": "python manage.py test"
+        }
+    ]
+}
