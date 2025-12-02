@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    {%block content %}
+
+    {% endblock %}
+</body>
+</html>
+
+
+
+<!--
+
+def index(request):
+    books=Book.objects.all()
+    num_books=books.count()
+    avg_rating=books.aggregate(Avg="rating")
+    return render(request,"book_outlet/index.html",{"books":books,"total_no_of_books":num_books,"average_rating":avg_rating})
+
+
+
+-->
