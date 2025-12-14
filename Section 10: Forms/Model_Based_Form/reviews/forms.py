@@ -15,6 +15,14 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model=Review
         fields='__all__'
+        labels={"user_name":"Your Name","review_text":"Enter Your Review","rating":"Rating of the Page"}
+        error_messages={"user_name":{
+            "required":"UserName is mandatory !",
+            "max_length":"Username must be short"
+        }}
 
+
+
+    
 
     
