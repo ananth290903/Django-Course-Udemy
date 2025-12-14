@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="{% static 'reviews/styles.css' %}" >
+</head>
+<body>
+    {% if username_empty %}
+     <p>Username is Empty..Ty Again</p>  
+    {% endif %}
+ 
+  
+        <form action="/" method="POST">
+            {% csrf_token %}
+            
+        <div class="form-control {% if form.user_name.errors%} errors{% endif %}" >
+            {{form.user_name.label_tag}}
+            {{form.user_name}}
+            {{form.user_name.errors}}
+        </div>
+
+          <div class="form-control {% if form.review_text.errors %}errors {% endif %}">
+                {{form.review_text.label_tag}}
+                {{form.review_text}}
+                {{form.review_text.errors}}
+         </div>
+
+           <div class="form-control {% if form.rating.errors %}errors {% endif %}">
+                {{form.rating.label_tag}}
+                {{form.rating}}
+                {{form.rating.errors}}
+         </div>
+
+            <button>Submit</button>
+        
+        </form>
+
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+</head>
+<body>
+    <form method="POST"> // Without the csrf_token will raise forbidden error
+        <label for="username">Your Username</label>
+        <input id="username" type="text" name="username"></input>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+-->

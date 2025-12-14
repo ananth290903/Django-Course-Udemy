@@ -1,0 +1,16 @@
+{
+    "python.defaultInterpreterPath": "/home/user1/Desktop/feedback/myenv/bin/python3.9",
+    "python.analysis.extraPaths": [
+        "/home/user1/Desktop/feedback/myenv/lib/python3.9/site-packages"
+    ],
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "python.languageServer": "Pylance",
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "python-envs.pythonProjects": []
+}
