@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+   {{post.title}}
+{% endblock %}
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/post_detail.css'  %}">
+
+{% endblock %}
+
+{% block content %}
+
+    {% for tag in post_tags %}
+    <span>{{tag.caption}}</span>
+    {% endfor %}
+
+
+   <section id="summary">
+    <h2>{{post.title}}</h2>
+    <article>
+      <img src="{{post.image.url}}" alt="{{post.title}}" >
+             
+       <address>By <a href="mailto:{{post.author.email}}">{{post.author}}</a> </address>
+       <div>
+        Last Updated on <time>{{post.date | date:"d M Y"}}</time>
+       </div>
+
+    </article>
+
+   </section>
+
+
+   <main>
+     {{post.content|linebreaks}}
+
+
+ <section id="comment-form">
+  <h2>Your Comment</h2>
+  <form method="POST" actin="/"> 
+   {% csrf_token %}
+    {% for form_field in comment_form %}
+      <div class="form-control">
+        {{ form_field.label_tag }}
+        {{ form_field }}
+        {{ form_field.errors }}
+      </div>
+    {% endfor %}
+    <button>Save Comment</button>
+  </form>
+</section>
+
+   </main>
+
+  
+
+
+
+{% endblock %}

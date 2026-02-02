@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meetup_title}}</title>
+    <link rel="stylesheet" href="{% static 'meetups/index.css' %}" >
+    <link rel="stylesheet" href="{% static 'meetups/meetup-details.css' %}">
+
+</head>
+<body>
+    <main>
+    {% if specific_meetup_exist %}
+        <article>
+            <section id="location">
+                <h2>Meetup Location</h2>
+                <address>This event is happening in the <span>LOCATION</span> (ADDRESS).</address>
+        
+            </section>
+        
+        
+            <section id="details">
+                <h2>What is this meetup about ?</h2>
+                <p>{{meetup_description}}</p>
+        
+                <footer>
+                    <p>Need more details.. Pls <a href=""> contact the organizer </a> (but pls dont spam them... :-)) </p>
+                </footer>
+            </section>
+
+        </article>
+
+        {% else %}
+        <p> Dear Visitor.., sorry such a meeting does'nt exist !!!</p>
+
+    {% endif %}
+
+    </main>
+    
+</body>
+</html>

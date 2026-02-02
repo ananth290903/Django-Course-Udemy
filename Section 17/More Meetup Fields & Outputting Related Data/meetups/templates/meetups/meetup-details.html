@@ -1,0 +1,48 @@
+{% extends "meetups/base/base.html"%}
+{% load static %}
+
+
+{% block title %} {{meetup.title}} {% endblock %}
+
+
+{% block styles %}
+            <link rel="stylesheet" href="{% static 'meetups/index.css' %}" >
+            <link rel="stylesheet" href="{% static 'meetups/meetup-details.css' %}">
+{% endblock %}
+
+{% block main_block_heading %} 
+        {{meetup.title}} 
+{% endblock %}
+
+
+{% block content %}
+            {% if specific_meetup_exist %}
+            <article>
+
+            <img id="main-image" src="{{meetup.image.url}}" alt="{{meetup.title}}"  />
+            <section id="location">
+                <h2>Meetup Location</h2>
+                <address>This event is happening in the <span>LOCATION ({{meetup.location.name}})</span> ADDRESS({{meetup.location.address}})</address>
+        
+            </section>
+        
+        
+            <section id="details">
+                <h2>What is this meetup about ?</h2>
+                <p>{{meetup.description}}</p>
+        
+                <footer>
+                    <p>Need more details.. Pls <a href=""> contact the organizer </a> (but pls dont spam them... :-)</p>
+                </footer>
+            </section>
+
+            </article>
+
+          {% else %}
+                <p> Dear Visitor.., sorry such a meeting does'nt exist !!!</p>
+         {% endif %}
+
+
+{% endblock %}
+
+       

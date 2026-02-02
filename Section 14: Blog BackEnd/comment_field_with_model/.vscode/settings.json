@@ -1,0 +1,16 @@
+// .vscode/settings.json
+{
+    "python.defaultInterpreterPath": "/home/user1/Desktop/my_site/usr/bin/python3.9",
+    "editor.defaultFormatter": "ms-python.python",
+     "editor.semanticHighlighting.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+"editor.insertSpaces": true,
+    "python.languageServer":"Pylance",
+    "emmet.includeLanguages": {
+    "django-html": "html"
+  }
+}
+
+
+

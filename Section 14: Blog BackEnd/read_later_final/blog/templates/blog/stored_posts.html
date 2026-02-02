@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Favourite Posts{% endblock %} 
+
+{% comment %} {% block css_files %}  
+      <link rel="stylesheet" href="{% static 'blog/index.css' %}" >
+      <link rel="stylesheet" href="{% static 'blog/post.css' %}" >
+{% endblock %} {% endcomment %}
+
+{%block content%}
+
+<section id="stored-posts">
+    <h1>Your Favourite Posts Are The Following...</h1>
+    {% if any_posts_selected %}
+    <ul>
+        {% for post in posts %}
+           <li>
+               <a href="{% url "post-detail-page" post.slug %}">{{post.title}}</a>
+           </li>
+        {% endfor %}
+
+    </ul>
+   {% endif %}
+</section>    
+
+{% endblock %}
+
